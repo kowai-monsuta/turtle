@@ -1,11 +1,7 @@
 from turtle import *
+import time
 
-
-
-bgcolor("black")
-speed(300)
-
-def draw_square(some_turtle,size):
+def draw_square(some_turtle, size):
 
     some_turtle.goto(0,0)
 
@@ -14,63 +10,91 @@ def draw_square(some_turtle,size):
         some_turtle.right(90)
         
         
-def draw_art():
+def draw_art(some_turtle):
 
-    apple= Turtle()
-    apple.shape("turtle")
-    apple.color("yellow")
-    apple.speed(100)
-    apple.pensize(2)
-    for i in range(1,37):
-        draw_square(apple,200)
-        apple.right(10)
-    for i in range(1,37):
-        draw_square(apple,400)
-        apple.right(10)
-    for i in range(1,37):
-        draw_square(apple,600)
-        apple.right(10)
-    for i in range(1,37):
-        draw_square(apple,800)
-        apple.right(10)
-
-
-draw_art()
-
-
-def draw_cirlce(turtle_some):
-
-    for i in range (3,5):
-        turtle_some.back(200)
-        turtle_some.right(90)
-
-def draw_design():
+    some_turtle.pensize(3)
+    some_turtle.fillcolor("red")
     
-    pie = Turtle()
-    for i in (0,1,2,3,4,5,6,7,8,9,10,11,12):
-        pie.speed(1000)
-        pie.right(46)
-        pie.pensize(2)
-        
-        pie.pencolor("blue")
-        pie.circle(1000)
-        pie.pencolor("red")
-        pie.circle(500)
-        pie.pencolor("white")
-        pie.circle(750)
+    for i in range(1,37):
+        draw_square(some_turtle, 50)
+        some_turtle.right(10)
+        some_turtle.pencolor("white")
+    for i in range(1,37):
+        draw_square(some_turtle, 100)
+        some_turtle.right(10)
+        some_turtle.pencolor("red")
+    for i in range(1,37):
+        draw_square(some_turtle, 200)
+        some_turtle.right(10)
+        some_turtle.pencolor("blue")
+    for i in range(1,37):
+        draw_square(some_turtle, 300)
+        some_turtle.right(10)
+        some_turtle.pencolor("yellow")
+    for i in range(1,37):
+        draw_square(some_turtle, 400)
+        some_turtle.right(10)
+        some_turtle.pencolor("white")
+    for i in range(1,37):
+        draw_square(some_turtle, 500)
+        some_turtle.right(10)
+        some_turtle.pencolor("red")
+    for i in range(1,37):
+        draw_square(some_turtle, 600)
+        some_turtle.right(10)
+        some_turtle.pencolor("blue")
+    for i in range(1,37):
+        draw_square(some_turtle, 700)
+        some_turtle.right(10)
+        some_turtle.pencolor("yellow")
+    for i in range(1,37):
+        draw_square(some_turtle, 800)
+        some_turtle.right(10)
+        some_turtle.pencolor("white")
 
 
-draw_design()
+def draw_design(some_turtle):
+    pie.speed(1000)
+    pie.pensize(2)
+
+    for i in range(1,100):
+        some_turtle.right(10)
+        some_turtle.pencolor("blue")
+        some_turtle.circle(100)
+        some_turtle.pencolor("white")
+        some_turtle.circle(50)
+        some_turtle.pencolor("red")
+        some_turtle.circle(75)
+        some_turtle.pencolor("yellow")
+        some_turtle.circle(25)
 
 setup(500, 500)
-Screen()
 title("Turtle Keys")
-move = Turtle()
-showturtle()
 
+bgcolor("black")
+
+time.sleep(10)
+
+apple = Turtle()
+apple.shape("turtle")
+apple.color("white")
+apple.speed(900)
+
+pie = Turtle()
+
+move = Turtle()
 move.pensize(5)
 move.pencolor("white")
-        
+
+
+draw_art(apple)
+draw_design(pie)
+
+
+pie.reset()
+apple.reset()
+
+     
 def k1():
     move.forward(45)
 
@@ -88,8 +112,9 @@ onkey(k2, "Left")
 onkey(k3, "Right")
 onkey(k4, "Down")
 
+
 listen()
 mainloop()
 
-
 done()
+
